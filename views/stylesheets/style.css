@@ -1,4 +1,7 @@
-.header {
-  text-align: center; }
+html {
+  font-family: "Arial Black"; }
+
+.headings {
+  text-align: center !important; }
 
 /*# sourceMappingURL=style.css.map */
