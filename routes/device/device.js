@@ -13,7 +13,7 @@ gpio.open(PIN, 'input', function(err) {
             }
         });
         gpio.close(PIN, function() {
-
+            console.log("closed");
         });
     }
 
