@@ -1,22 +1,9 @@
-var gpio = require('pi-gpio');
-const PIN = 7;
+var gpio = require('rpi-gpio');
 
-gpio.close(PIN, function() {
-    console.log("closed");
-});
-gpio.open(PIN, 'input', function(err) {
-    if(err) {
-        throw err;
-    } else {
-        gpio.read(PIN, function(err, val) {
-            if(err) {
-                throw err;
-            } else {
-                console.log(val);
-            }
-        });
-    }
-    gpio.close(PIN, function() {
-        console.log("closed");
+gpio.setup(7, gpio.DIR_IN, readInput);
+
+function readInput() {
+    gpio.read(7, function(err, value) {
+        console.log('The value is ' + value);
     });
-});
+}
