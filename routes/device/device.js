@@ -1,6 +1,9 @@
 var gpio = require('pi-gpio');
 const PIN = 7;
 
+gpio.close(PIN, function() {
+    console.log("closed");
+});
 gpio.open(PIN, 'input', function(err) {
     if(err) {
         throw err;
@@ -12,9 +15,8 @@ gpio.open(PIN, 'input', function(err) {
                 console.log(val);
             }
         });
-        gpio.close(PIN, function() {
-            console.log("closed");
-        });
     }
-
+    gpio.close(PIN, function() {
+        console.log("closed");
+    });
 });
