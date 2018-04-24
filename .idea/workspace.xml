@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbe2fe7b-46c2-40ab-96a3-00680a7c8535" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/device/device.js" afterPath="$PROJECT_DIR$/routes/device/device.js" />
-    </list>
+    <list default="true" id="dbe2fe7b-46c2-40ab-96a3-00680a7c8535" name="Default" comment="" />
     <ignored path="savant.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
