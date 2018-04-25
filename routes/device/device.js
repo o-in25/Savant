@@ -1,22 +1,11 @@
-var gpio = require('pi-gpio');
-const PIN = 7;
+const Raspi = require('raspi-io');
+const five = require('johnny-five');
+const board = new five.Board({io: new Raspi()});
+const PIN = 8;
 
-gpio.close(PIN, function() {
-    console.log("closed");
-});
-gpio.open(PIN, 'input', function(err) {
-    if(err) {
-        throw err;
-    } else {
-        gpio.read(PIN, function(err, val) {
-            if(err) {
-                throw err;
-            } else {
-                console.log(val);
-            }
-        });
-    }
-    gpio.close(PIN, function() {
-        console.log("closed");
+
+board.on('ready', function() {
+    this.digitalRead(PIN, function(val) {
+        console.log(val);
     });
 });
