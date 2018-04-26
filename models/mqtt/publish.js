@@ -3,7 +3,7 @@
 (function() {
     // needs
     var mqtt = require('mqtt');
-    var credentials = require('../service/credentials.json');
+    var credentials = require('.././credentials.json');
     // credentials
 
     console.log('starting');
