@@ -1,7 +1,7 @@
 (function() {
     // needs
     var mqtt = require('mqtt');
-    var credentials = require('../service/credentials.js');
+    var credentials = require('.././credentials.js');
     // credentials
     console.log('starting');
     // connect to the mqtt broker

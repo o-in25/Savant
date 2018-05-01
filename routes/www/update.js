@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const MongoClient = require('mongodb').MongoClient;
-var credenitals = require('../service/credentials.json');
-var db = require('mongodb').Db;
-const url = credenitals.databaseUrl;
+var credenitals = require('.././credentials.json');
 
 
 MongoClient.connect(url, function(err, dbobj) {
@@ -20,6 +18,19 @@ MongoClient.connect(url, function(err, dbobj) {
                 throw err;
             } else {
                 console.log("Data updated...");
+                var promise = new Promise(function(resolve, reject) {
+                    var done = false;
+                    if(!done) {
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                });
+
+                promise.then(function(val) {
+
+                });
+
             }
         });
         // var count = res
