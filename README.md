@@ -7,9 +7,9 @@ middleware - the pi device code
 
 models
 
-  mqtt - contains mqtt info
+           ~/mqtt - contains mqtt info
   
-  service - contains db info
+           ~/service - contains db info
   
  routes 
  
