@@ -13,15 +13,15 @@ models
   
  routes 
  
-  www - html routers
+            ~/ www - html routers
   
-  index.js
+             ~/index.js
   
  tests - tests
  
  views
  
-  stylesheets - scss/css
+            ~/ stylesheets - scss/css
   
-  html files
+             ~/html files
   
