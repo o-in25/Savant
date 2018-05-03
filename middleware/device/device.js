@@ -1,13 +1,34 @@
 const Raspi = require('raspi-io');
 const five = require('johnny-five');
-const board = new five.Board({io: new Raspi()});
+const board = new five.Board({
+    io: new Raspi(),
+    repl: false,
+    debug: false
+});
 const PIN = 'GPIO4';
-
-'use strict';
+var mqtt = require('mqtt');
 
 board.on('ready', function() {
-    this.digitalRead(PIN, function(val) {
-        console.log(val);
-        // TODO GET DEVICE DATA
+    var client = mqtt.connect('mqtt://m13.cloudmqtt.com:10766', {
+        // cloudmqtt username and password
+        username: 'hzkmxdat',
+        password: 'nLs3hY5o4BcU'
+    });
+    client.on('connect', function () {
+        // TODO PUBLISH DEVICE DATA
+        board.digitalRead(PIN, function(val) {
+            var date = new Date();
+            var data = {
+                day: '' + date.getDay(),
+                month: '' + date.getMonth(),
+                year: '' + date.getYear(),
+                hour: '' + date.getHours(),
+                minutes: '' + date.getMinutes(),
+                seconds: '' + date.getSeconds(),
+                milliseconds: '' + date.getMilliseconds()
+
+            };
+            client.publish('counter','' + JSON.stringify(data));
+        })
     });
 });

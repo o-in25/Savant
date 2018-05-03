@@ -1,45 +1,24 @@
 var express = require('express');
 var router = express.Router();
-const MongoClient = require('mongodb').MongoClient;
-var credenitals = require('.././credentials.json');
 
+var util = require('../../models/service/db.js');
 
-MongoClient.connect(url, function(err, dbobj) {
-    if(err) {
-        // connection failed
-        console.log('ERROR!');
-    } else {
-        // connected to the database
-        // find the collection and insert
-        // the message in it
-        var collection = dbobj.db('info').collection('counter_data');
-        collection.update({}, {$inc: {counter: 1}}, function(err, res) {
-            if(err) {
+router.get('/', function(req, res, next) {
+    util.connect(function() {
+        // get the dbobj
+        console.log('called');
+        var dbobj = util.dbobj();
+        // find the collection 'counter data'
+        dbobj.db('info').collection('counter_data').update({}, {$inc: {counter: 1}}, function (err, resu) {
+            if (err) {
                 throw err;
             } else {
-                console.log("Data updated...");
-                var promise = new Promise(function(resolve, reject) {
-                    var done = false;
-                    if(!done) {
-                        resolve();
-                    } else {
-                        reject();
-                    }
-                });
-
-                promise.then(function(val) {
-
-                });
-
+                console.log("Data updated... " + resu);
+                res.render('update', {});
             }
         });
-        // var count = res
-        dbobj.close();
-    }
+    });
+
 });
-
-
 module.exports = router;
-/**
- * Created by o_in25 on 4/11/18.
- */
+

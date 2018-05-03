@@ -1,7 +1,7 @@
     // the database and the url
     var express = require('express');
     const MongoClient = require('mongodb').MongoClient;
-    var credenitals = require('./credentials.json');
+    var credenitals = require('./../credentials.json');
     var db = require('mongodb').Db;
     const url = credenitals.databaseUrl;
 
@@ -25,18 +25,6 @@
                 return _dbobj;
         }
     };
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
 
