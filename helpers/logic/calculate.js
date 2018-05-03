@@ -1,9 +1,13 @@
-// will take the reading of the sensor and will
-// produce a meaningful and desired result
-// implements moments.js
-var result = function(obj) {
-    // TODO IMPLEMENT SOME ALGORITHM
-    var obj = JSON.parse(obj);
-
+module.exports = {
+    solve: function(entry, k) {
+        console.log(entry);
+    for(var i = 0; i < entry.length; i++) {
+        if(Math.abs(entry.pop().milliseconds - entry[0].milliseconds) > k == true) {
+            console.log('====================== TRUE ==========================');
+            return true;
+        }
+    }
+    return false;
+}
 
 };

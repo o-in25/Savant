@@ -14,6 +14,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var session = require('express-session');
 
+var sub = require('./models/mqtt/subscribe.js');
+sub.sub();
 
 var app = express();
 app.use(require('serve-static')(__dirname + '/../../public'));
@@ -84,6 +86,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 
 module.exports = app;

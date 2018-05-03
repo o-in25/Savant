@@ -13,6 +13,7 @@
                  if (err) {
                   // connection failed
                   console.log('Error, connection failed...');
+                     throw err;
                 } else {
                   // connected to the database
                   // find the collection and insert
