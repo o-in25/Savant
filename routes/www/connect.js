@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var getCounterService = require('../../models/service/get.js');
+var util = require('../../models/service/get.js');
 
-getCounterService.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
     // get the count
     util.getCounterDataCollection().then(function(data){
+        // the route
         res.render('connection', {message: data});
-    }, function(err){
+    }, function(err) {
         throw err;
     });
 });
