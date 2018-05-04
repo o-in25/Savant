@@ -19,7 +19,7 @@ board.on('ready', function() {
         password: 'nLs3hY5o4BcU'
     });
 
-    // on connect publlish
+    // on connect publish
     client.on('connect', function () {
         // TODO PUBLISH DEVICE DATA
         board.digitalRead(PIN, function(val) {

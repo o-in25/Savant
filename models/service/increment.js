@@ -3,10 +3,10 @@ var db = require('mongodb').Db;
 var util = require('./db.js');
 
 module.exports = {
-    updaterCounterCollection: function() {
+    updateCounterCollection: function() {
         return new Promise(function(resolve, reject) {
             util.connect(function() {
-                dbobj.db('info').collection('counter_data').update({}, {$inc: {counter: data}}, function(err, res) {
+                util.dbobj().db('info').collection('counter_data').update({}, {$inc: {counter: 1}}, function(err, res) {
                     if(err) {
                         // reject
                         reject();
@@ -23,7 +23,7 @@ module.exports = {
                     } else {
                         reject();
                     }
-                })
+                });
             });
         });
     }
