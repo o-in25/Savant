@@ -59,7 +59,7 @@ For the right side of the sensor, exclusively for light, the the IR light sensor
 ### Building Savant ###
 ## 1. Connect The Connectors ##
 First, add the breadboard connectors to the IR sensors. Add 1 to the power and ground on the NodeMCU side, and 2 on the Raspberry Pi side: one for power/ground, one for GPIO
-![image tooltip here](/docs/imgs/1.JPG)
+![image tooltip here](1.JPG)
 
 ## 2. Put Them In Their Place ##
 Since breadboards distribute power laterally, place the NodeMCU side IR on either (29,a) and (28,b) or (29, i) and (28, j).
