@@ -1,23 +1,22 @@
 # Savant
 Savant is an IoT tool used for your home. Savant tracks the people entering and exiting, estimates how many people are in your home, and use that information to adjust lighting, music, temperature, and much more.
 
+DIRECTORY SUMMARY 
 helpers - contain help functions
-
 middleware - the pi device code
-
 models
-~/mqtt - contains mqtt info
-~/service - contains db info  
+mqtt - contains mqtt info
+service - contains db info  
 routes 
-~/ www - html routers
-~/index.js
- tests - tests 
- views  
- ~/ stylesheets - scss/css
- ~/html files
+www - html routers
+index.js
+tests - tests 
+views  
+stylesheets - scss/css
+html files
  
  
- # Blog Post#
+ # HOW TO MAKE YOUR OWN SAVANTt#
  ### Introduction ##
  Savant is an IoT tool used for your home. Savant tracks the people entering and exiting, estimates how many people are in your home, and use that information to adjust lighting, music, temperature, and much more. 
  
@@ -30,18 +29,27 @@ routes
  ### Building Savant ##
  You will need...
  ****1.**** Raspberry Pi 3 B/B+ ($35)
+ 
  ****2.**** NodeMCU/Arduino Microcontroller ($10)
+ 
  ****3.**** IR Sensor ($15)
+ 
  ****3.**** 2 Breadboards ($5 x 2)
+ 
  ****4.**** 2 Micro-USB chargers
+ 
  ****5.**** 2 Female-to-Female GPIO pins
+ 
  ****6.**** 2 Male-to-Male GPIO pins
+ 
  ****7.**** 3 Breadboard connectors
+ 
  ****8.**** > 8 GB Micro-SD card ($10)
+ 
  ****8.**** Patience
  
  
- For the right side of the sensor, exclusively for light, the the IR light sensor is placed in the NodeMCU. There, the 2 male-to-male pins connect into the NodeMCU as well as the Micro-USB. On the other side, for the actual sensor, the power, ground, and GPIO pins are connected via the breadboard connectors. From there, the female-to-femail pins connect it to the Rasberry Pi, as well as the Micro-USB and Mini-SD
+For the right side of the sensor, exclusively for light, the the IR light sensor is placed in the NodeMCU. There, the 2 male-to-male pins connect into the NodeMCU as well as the Micro-USB. On the other side, for the actual sensor, the power, ground, and GPIO pins are connected via the breadboard connectors. From there, the female-to-femail pins connect it to the Rasberry Pi, as well as the Micro-USB and Mini-SD
 
  ### Code ###
  First, connect the Raspberry Pi to the internet via SSH. There are many great tuitorials out there to do so, but I recommend this one: https://www.losant.com/blog/getting-started-with-the-raspberry-pi-zero-w-without-a-monitor
