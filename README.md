@@ -16,7 +16,7 @@ stylesheets - scss/css
 html files
  
  
- # HOW TO MAKE YOUR OWN SAVANTt#
+ # HOW TO MAKE YOUR OWN SAVANT #
  ### Introduction ##
  Savant is an IoT tool used for your home. Savant tracks the people entering and exiting, estimates how many people are in your home, and use that information to adjust lighting, music, temperature, and much more. 
  
@@ -69,7 +69,7 @@ Next, connect the male-to-male pins on any pins DIRECTLY paralell to where you p
 ![image tooltip here](/docs/imgs/p2b.png)
 
 Finally, connect the other end into the NodeMCU slots "VIM" and "GND" which will be on (1, j) and (2,j) for 5V (Recommended). If you choose to opt with 3V, place them in the exact same way, but on the other side of the NodeMCU. For this tuitorial, 5V will be choosen.
-![image tooltip here](/docs/imgs/p2c.png)
+![image tooltip here](1.JPG)
 
 We are done with the NodeMCU side (for now). Now, onto the Rasoberry Pi.
 
