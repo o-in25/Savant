@@ -4,7 +4,6 @@ var util = require('../../models/service/count.js');
 var inc = require('../../models/service/increment.js');
 
 router.get('/', function(req, res, next) {
-    console.log('HERE!!!!!!!!!!!');
     var recent = require('../../models/service/recent');
     var calc = require('../../helpers/logic/calculate');
     recent.recent().then(function(result) {
