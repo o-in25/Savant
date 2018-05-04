@@ -1,27 +1,38 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../../models/model/user.js');
+var util = require('../../models/service/count.js');
+var inc = require('../../models/service/increment.js');
+var toggle = false;
 
-router.get('/login', function(req, res, next) {
-    res.render('login', {});
-});
+router.get('/', function(req, res, next) {
+    var recent = require('../../models/service/recent');
+    var calc = require('../../helpers/logic/calculate');
 
-// register user
-router.post('/register', function(req, res) {
+    /**
+     recent.recent().then(function(result) {
+            if(calc.solve(result, 1000)) {
+                inc.updateCounterCollection().then(console.log('updated'));
+            }
+        }).catch(console.log('!'));
+     **/
 
-    var username = req.body.username;
-    var password = req.body.password;
-    var email = req.body.email;
+    if(toggle == false) {
+        inc.updateCounterCollection().then(console.log('updated'));
+        toggle = true;
 
-    req.checkBody('username', 'Username required').notEmpty();
-    req.checkBody('password', 'Password required').notEmpty();
-    req.checkBody('email', 'Email required').isEmail();
-    var errs = req.validationErrors();
-    if(errs) {
-        res.render('register', {errors: errs});
     } else {
-        console.log('success');
+        toggle = false;
     }
+    // get the count
+    util.getCounterDataCollection().then(function(data){
+        // the route
+
+        res.render('connection', {message: data});
+
+    }, function(err) {
+        throw err;
+    });
 
 });
 module.exports = router;
+

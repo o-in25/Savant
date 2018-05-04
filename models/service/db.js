@@ -18,11 +18,13 @@
                   // connected to the database
                   // find the collection and insert
                   // the message in it
+                     console.log('SUCCESS');
                   _dbobj = dbobj;
                   callback();
                 }
             });
         }, dbobj: function() {
+                console.log(_dbobj);
                 return _dbobj;
         }
     };
