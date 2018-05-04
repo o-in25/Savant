@@ -1,14 +1,7 @@
 // needs
 var mqtt = require('mqtt');
-
-
-var credentials = {
-    "username": "hzkmxdat",
-    "password": "nLs3hY5o4BcU",
-    "url": "mqtt://m13.cloudmqtt.com:10766",
-    "databaseUrl": "mongodb://ehalligan12:Texanol12@ds021943.mlab.com:21943/info"
-};
-
+var db = require('../service/insert.js');
+var credentials = require('../credentials.json');
 
 
 // credentials
@@ -34,6 +27,8 @@ client.on('message', function (topic, message) {
     // the topic desired
     if (topic === 'counter') {
         console.log(message.toString());
+        db.insertData(JSON.parse(message.toString()));
+
         // TODO INSERT INTO DATABASE
     } else {
         throw console.log('error');
