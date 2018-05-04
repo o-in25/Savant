@@ -59,37 +59,37 @@ For the right side of the sensor, exclusively for light, the the IR light sensor
 ### Building Savant ###
 ## 1. Connect The Connectors ##
 First, add the breadboard connectors to the IR sensors. Add 1 to the power and ground on the NodeMCU side, and 2 on the Raspberry Pi side: one for power/ground, one for GPIO
-![image tooltip here](/docs/imgs/p1.png)
+![image tooltip here](/docs/imgs/1.JPG)
 
 ## 2. Put Them In Their Place ##
 Since breadboards distribute power laterally, place the NodeMCU side IR on either (29,a) and (28,b) or (29, i) and (28, j).
-![image tooltip here](/docs/imgs/p2a.png)
+![image tooltip here](/docs/imgs/2.JPG)
 
 Next, connect the male-to-male pins on any pins DIRECTLY paralell to where you place them pior. Refer to this diagram is confusion arrises.
-![image tooltip here](/docs/imgs/p2b.png)
+![image tooltip here](/docs/imgs/3.JPG)
 
 Finally, connect the other end into the NodeMCU slots "VIM" and "GND" which will be on (1, j) and (2,j) for 5V (Recommended). If you choose to opt with 3V, place them in the exact same way, but on the other side of the NodeMCU. For this tuitorial, 5V will be choosen.
-![image tooltip here](1.JPG)
+![image tooltip here](/docs/imgs/4.JPG)
 
 We are done with the NodeMCU side (for now). Now, onto the Rasoberry Pi.
 
 Similarly to the NodeMCU, place the power/ground pins to either (29,a) and (28,b) or (29, i) and (28, j).
-![image tooltip here](/docs/imgs/p2d.png)
+![image tooltip here](/docs/imgs/5.JPG)
 
 Then, place the ground/power pins DIRECTLY paralell, just as before.
-![image tooltip here](/docs/imgs/p2e.png)
+![image tooltip here](/docs/imgs/6.JPG)
 
 Then, pick any other pin not in the row of 28 or 29, and place the GPIO connector. For our purposes, we will choose the one directly 1 down.
-![image tooltip here](/docs/imgs/p2f.png)
+![image tooltip here](/docs/imgs/7.JPG)
 
 Just as before, hook the wires up to achieve the following:
-![image tooltip here](/docs/imgs/p2g.png)
+![image tooltip here](/docs/imgs/8.JPG)
 
 Finally, connect the pins into your Raspberry Pi GPIO slots via a pinout model. If you elected to use a Raspberry Pi 3 B, here it is for you.
-![image tooltip here](/docs/imgs/p2g.png)
+![image tooltip here](/docs/imgs/9.JPG)
 
 Consult the diagram and place the pins. The final result should go as follows.
-![image tooltip here](/docs/imgs/p2g.png)
+![image tooltip here](/docs/imgs/10.JPG)
 
 Great! We are now ready to get started.
 
