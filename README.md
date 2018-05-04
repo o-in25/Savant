@@ -197,7 +197,6 @@ Now, the device is ready to send a JSON object which has the the date informatio
 
 ## 3. It's NoSQL - It's The Original ##
 Sign up for MongoDB/MLab account if you do not have an account. Here is a link for MLab: https://mlab.com/login/ Once in, go to the dashboard and create a new collection and document. Here is where we will be placing the newly constructed JSON arrays in.
-![image tooltip here](/docs/imgs/p3a.png)
 
 Important! Make sure you keep track of your MLab driver URI
 ```
